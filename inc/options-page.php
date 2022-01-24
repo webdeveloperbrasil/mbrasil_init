@@ -44,6 +44,9 @@ if (!function_exists('str_contains')) {
 
 function mbrasil_init_options_page()
 {
+
+    $plugin_data = get_plugin_data(WP_PLUGIN_DIR . "/mbrasil_init/index.php");
+
     $plugin_dir = WP_PLUGIN_DIR . '/mbrasil-snippets/';
     $root_files = scandir($plugin_dir);
 
@@ -111,7 +114,7 @@ function mbrasil_init_options_page()
     ?>
 
 <div>
-    <h2>MBrasil INIT</h2>
+    <h2>MBrasil INIT - Version: <?php echo $plugin_data['Version'] ?></h2>
     <hr>
     <h3>COMO USAR</h3>
     <p><strong>DIA 1:</strong> Seus scripts php devem ser salvos na pasta: <b>wp_content/plugins/mbrasil-snippets</b>.
